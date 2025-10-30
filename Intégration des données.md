@@ -71,7 +71,6 @@ Ainsi, le KG devient la **couche centrale de connaissance** sur laquelle reposen
 Les modèles utilisant des représentations de graphes (Graph Neural Networks, embeddings) obtiennent souvent de meilleurs résultats.
 
 ---
-
 ### **8) Comment les LLM (grands modèles de langage) peuvent-ils enrichir ou interagir avec un Knowledge Graph ?**
 
 * **Extraction** : les LLM peuvent extraire des entités et relations à partir de textes non structurés pour alimenter un KG.
@@ -79,7 +78,7 @@ Les modèles utilisant des représentations de graphes (Graph Neural Networks, e
 * **Interface naturelle** : ils traduisent des questions en langage naturel en requêtes SPARQL.
 * **Enrichissement** : ils génèrent des descriptions ou infèrent des attributs manquants.
 
----
+
 
 ### **9) Quels sont les défis de l’usage combiné des KGs et des LLMs ?**
 
@@ -87,59 +86,61 @@ Les modèles utilisant des représentations de graphes (Graph Neural Networks, e
 * **Incohérences de schéma** : leurs propositions peuvent violer des contraintes ontologiques.
 * **Performance** : la récupération du bon sous-graphe pour chaque requête est coûteuse.
 * **Traçabilité** : il faut garder la provenance et vérifier la fiabilité des ajou
-10) Comment les LLMs peuvent-ils aider à corriger ou compléter un Knowledge Graph ?
+### **10) Comment les LLMs peuvent-ils aider à corriger ou compléter un Knowledge Graph ?
 
-En détectant les incohérences ou les valeurs manquantes.
+Les grands modèles de langage (LLM) peuvent :
 
-En proposant des compléments probables, validés ensuite par des règles ou des humains.
+Détecter les incohérences ou les données manquantes dans un graphe.
 
-En générant des explications sur les corrections proposées.
+Proposer des valeurs ou relations probables, ensuite validées par des règles ou des experts humains.
 
-En rédigeant des requêtes SPARQL ou RML pour automatiser des mises à jour.
+Générer des explications pour justifier les corrections ou ajouts proposés.
 
-Ces suggestions doivent toujours être validées (via SHACL, règles ou expert humain).
+Produire automatiquement des requêtes SPARQL ou RML afin de mettre à jour les données.
 
-11) En quoi la collaboration entre modèles sémantiques (KG) et statistiques (LLM) ouvre-t-elle de nouvelles perspectives pour l’IA ?
+Les suggestions générées par les LLM doivent toujours être vérifiées à l’aide de langages de validation (comme SHACL) ou d’un contrôle humain.
 
-Cette collaboration réunit le symbolique (logique, relations explicites) et le statistique (langage, contexte).
-Cela permet :
+### **11) En quoi la collaboration entre modèles sémantiques (KG) et modèles statistiques (LLM) ouvre-t-elle de nouvelles perspectives pour l’intelligence artificielle ?
 
-un raisonnement plus fiable,
+Cette collaboration combine la logique symbolique (représentation structurée du savoir via les KGs) et la compréhension statistique du langage (fournie par les LLMs).
+Elle permet :
 
-une compréhension du langage plus profonde,
+Un raisonnement plus précis et cohérent.
 
-une meilleure explicabilité,
+Une compréhension contextuelle plus riche des données.
 
-et une IA plus ancrée sur des faits réels.
-12) Scénarios métiers prometteurs (avec liens GitHub)
+Une meilleure explicabilité des décisions.
 
-L’intégration entre le Web sémantique, les Knowledge Graphs (KG) et les grands modèles de langage (LLM) ouvre de nombreuses perspectives concrètes dans plusieurs domaines professionnels :
+Une IA plus fiable et ancrée dans la connaissance réelle.
 
-1)Recherche d’entreprise et assistants de connaissance
-Les entreprises peuvent combiner un KG et un LLM pour permettre la recherche intelligente d’informations internes (documents, rapports, politiques internes, etc.).
-Le LLM traduit les questions naturelles des utilisateurs en requêtes sur le graphe, offrant des réponses contextuelles et fiables.
-Exemple de projet : LangChain + Neo4j Guide
+En un mot, les KGs apportent la structure et la véracité, tandis que les LLMs ajoutent la flexibilité linguistique et la capacité d’interprétation.
+
+### **12) Scénarios métiers prometteurs (avec liens GitHub)
+
+L’intégration du Web sémantique, des Knowledge Graphs et des grands modèles de langage (LLM) ouvre des perspectives concrètes dans plusieurs domaines :
+
+* **Recherche d’entreprise et assistants de connaissance**
+Les entreprises peuvent combiner un KG et un LLM pour permettre la recherche intelligente d’informations internes.
+Exemples : LangChain + Neo4j Guide
  et Neo4j LLM Graph Builder
 .
 
-2)Customer 360 et gestion de la relation client
-Dans les systèmes CRM, les données clients proviennent souvent de plusieurs sources (ventes, support, marketing).
-Un KG permet de fusionner et harmoniser ces données tandis qu’un LLM peut aider à identifier les doublons, enrichir les profils clients et générer des synthèses personnalisées.
-Exemple : Neo4j Examples
+* **Customer 360 et gestion de la relation client**
+Un KG fusionne les données de différentes sources clients, tandis qu’un LLM aide à identifier les doublons et à enrichir les profils.
+ Exemple : Neo4j Examples
 .
 
-3)Conformité réglementaire et audit
-Les organisations peuvent modéliser les lois et règlements sous forme d’ontologies et utiliser les LLM pour vérifier automatiquement la conformité et résumer les obligations légales.
-Exemple d’outil utile : SHACL Examples
+* **Conformité réglementaire et audit**
+Les ontologies juridiques permettent de modéliser les règles, et les LLM peuvent vérifier la conformité et résumer les obligations légales.
+ Exemple : SHACL Examples
 .
 
-4)Sciences biomédicales et recherche clinique
-Les données issues d’expériences, de publications scientifiques ou de bases médicales sont très hétérogènes.
-Les ontologies (comme OWL) et les KGs permettent de lier ces données, tandis que les LLM facilitent la découverte de relations cachées ou la génération d’hypothèses.
+* **Sciences biomédicales et recherche clinique**
+Les KGs unifient les données de recherche, et les LLMs facilitent la découverte de relations et hypothèses nouvelles.
 Exemple : Bio2RDF
 .
 
-5)Analyse de code et documentation logicielle (GitHub)
-On peut créer un Knowledge Graph à partir de dépôts GitHub (fonctions, dépendances, auteurs, commits).
-Le LLM aide à formuler des questions naturelles sur le code (“Que fait cette fonction ?”) et à générer des explications automatiques.
-Exemple de projet : KnowledgeGraphQA-LangGraph
+* **Analyse de code et documentation logicielle (GitHub)**
+Un KG construit à partir de dépôts de code permet d’explorer la structure logicielle, et le LLM peut expliquer le code ou répondre à des questions naturelles.
+ Exemple : KnowledgeGraphQA-LangGraph
+.
